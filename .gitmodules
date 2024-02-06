@@ -1,0 +1,3 @@
+[submodule "jbr.js"]
+	path = jbr.js
+	url = git@github.com:constraintAutomaton/jbr.js.git

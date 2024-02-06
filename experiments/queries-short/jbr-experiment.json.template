@@ -1,7 +1,7 @@
 {
   "@context": [
     "https://linkedsoftwaredependencies.org/bundles/npm/jbr/^2.0.0/components/context.jsonld",
-    "https://linkedsoftwaredependencies.org/bundles/npm/@jbr-experiment/solidbench/^2.0.0/components/context.jsonld",
+    ""https://linkedsoftwaredependencies.org/bundles/npm/jbr-solidbench-shapetree/^2.0.0/components/context.jsonld"",
     "https://linkedsoftwaredependencies.org/bundles/npm/@jbr-hook/sparql-endpoint-comunica/^2.0.0/components/context.jsonld"
   ],
   "@id": "urn:jbr:solid-link-traversal",
@@ -12,6 +12,8 @@
   "configFragmentAux": "input/config-fragmenter-auxiliary.json",
   "configQueries": "input/config-queries.json",
   "configServer": "input/config-server.json",
+  "shapesFolderPath": undefined,
+  "generateShapeTree": false,
   "validationParamsUrl": "https://cloud.ilabt.imec.be/index.php/s/bBZZKb7cP95WgcD/download/validation_params.zip",
   "configValidation": "input/config-validation.json",
   "hadoopMemory": "4G",
