@@ -1,20 +1,20 @@
 #!/bin/bash
 pushd index-vs-storage
-npm install
+yarn install
 popd
 
 pushd queries-short
-npm install
+yarn install
 popd
 
 pushd queries-discover
-npm install
+yarn install
 popd
 
 pushd queries-complex
-npm install
+yarn install
 popd
 
 pushd fragmentation
-npm install
+yarn install
 popd

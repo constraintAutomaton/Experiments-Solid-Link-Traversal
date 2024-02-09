@@ -1,4 +1,4 @@
 #!/bin/bash
-npm run jbr -- prepare
-npm run jbr -- run
+yarn jbr prepare
+yarn jbr run
 
