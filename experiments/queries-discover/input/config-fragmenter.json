@@ -450,15 +450,15 @@
           "tripleShapeTreeLocator": true,
           "shapeConfig": {
             "comments": {
-              "shape": "../../shapes/comments.shexc",
+              "shape": "../shapes/comments.shexc",
               "directory": "comments"
             },
             "post": {
-              "shape": "../../shapes/posts.shexc",
+              "shape": "../shapes/posts.shexc",
               "directory": "posts"
             },
             "card": {
-              "shape": "../../shapes/profile.shexc",
+              "shape": "../shapes/profile.shexc",
               "directory": "profile"
             }
           }
