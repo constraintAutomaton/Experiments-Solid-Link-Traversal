@@ -1,8 +1,6 @@
-/componentsjs-error-state.json
+**/*/componentsjs-error-state.json
 /node_modules
-results/*/combination_*
-results/*/generated/*
 **/*/yarn-error.log
+results/*/combination_*
 experiments/*/combinations/*
-experiments/*/generated/*
 !*.gitkeep
