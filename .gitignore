@@ -4,4 +4,6 @@ results/*/combination_*
 results/*/generated/*
 **/*/yarn-error.log
 experiments/*/combinations/*
+!experiments/*/combinations/.gitkeep
 experiments/*/generated/*
+!experiments/*/generated/.gitkeep
