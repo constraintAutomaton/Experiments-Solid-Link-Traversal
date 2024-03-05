@@ -1,7 +1,7 @@
 /componentsjs-error-state.json
 /node_modules
 /generated/*
-!/generated/.keep
+!/generated/.gitkeep
 /output/*
 !/output/.keep
 /combinations/*/generated
