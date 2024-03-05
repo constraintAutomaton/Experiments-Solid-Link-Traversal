@@ -1,20 +1,25 @@
 #!/bin/bash
 pushd index-vs-storage
-yarn install
+yarn install --ignore-engines
+yarn link "@jbr-experiment/solidbench"
 popd
 
 pushd queries-short
-yarn install
+yarn install --ignore-engines
+yarn link "@jbr-experiment/solidbench"
 popd
 
 pushd queries-discover
-yarn install
+yarn install --ignore-engines
+yarn link "@jbr-experiment/solidbench"
 popd
 
 pushd queries-complex
-yarn install
+yarn install --ignore-engines
+yarn link "@jbr-experiment/solidbench"
 popd
 
 pushd fragmentation
-yarn install
+yarn install --ignore-engines
+yarn link "@jbr-experiment/solidbench"
 popd

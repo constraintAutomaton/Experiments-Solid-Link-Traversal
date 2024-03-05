@@ -124,7 +124,30 @@
   "fragmentationStrategy": {
     "@type": "FragmentationStrategyComposite",
     "strategies": [
-      { "@type": "FragmentationStrategySubject" }
+      { "@type": "FragmentationStrategySubject" },
+      {
+        "@type": "FragmentationStrategyProbabilityQuadHandling",
+        "generationProbability": 100,
+        "partitionByResourceType": true,
+        "strategy": {
+          "@type": "FragmentationStrategyShape",
+          "tripleShapeTreeLocator": true,
+          "shapeConfig": {
+            "comments": {
+              "shape": "../../shapes/comments.shexc",
+              "directory": "comments"
+            },
+            "post": {
+              "shape": "../../shapes/posts.shexc",
+              "directory": "posts"
+            },
+            "card": {
+              "shape": "../../shapes/profile.shexc",
+              "directory": "profile"
+            }
+          }
+        }
+      }
     ]
   },
   "quadSink": {

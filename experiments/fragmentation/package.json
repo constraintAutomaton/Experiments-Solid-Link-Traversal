@@ -1,11 +1,11 @@
 {
   "private": true,
-  "name": "solid-link-traversal",
+  "name": "fragmentation",
   "dependencies": {
+    "@jbr-experiment/solidbench": "^3.0.2",
     "@jbr-hook/sparql-endpoint-comunica": "^3.0.2",
     "cross-env": "^7.0.3",
-    "jbr": "^3.0.2",
-    "jbr-solidbench-shapetree": "^0.0.6"
+    "jbr": "^3.0.2"
   },
   "scripts": {
     "jbr": "cross-env NODE_OPTIONS=--max-old-space-size=8192 jbr",
