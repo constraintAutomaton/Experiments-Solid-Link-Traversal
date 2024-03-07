@@ -1,7 +1,7 @@
 #!/bin/bash
 
-today=`date +'%Y-%m-%d'`
-prefix=myexperiment
+today=`date "+%Y_%m_%d__%H_%M_%S"`
+prefix=solidShapeIndexLTQP
 source .env # don't forget to create an .env file with the variable cloudfolder='${my cloud folder with a write permission}'
 experimentfolder=../experiments/*/output
 
