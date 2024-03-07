@@ -4,3 +4,4 @@
 results/*/combination_*
 experiments/*/combinations/*
 !*.gitkeep
+backup_procedure/.env

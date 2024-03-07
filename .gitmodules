@@ -1,3 +1,4 @@
-[submodule "jbr.js"]
-	path = jbr.js
-	url = git@github.com:constraintAutomaton/jbr.js.git
+[submodule "rdf-dataset-fragmenter.js"]
+	path = rdf-dataset-fragmenter.js
+	url = git@github.com:constraintAutomaton/rdf-dataset-fragmenter.js.git
+	branch = feature/shapeIndex

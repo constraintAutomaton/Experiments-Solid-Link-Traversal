@@ -4,7 +4,7 @@
     "https://linkedsoftwaredependencies.org/bundles/npm/@jbr-experiment/solidbench/^3.0.0/components/context.jsonld",
     "https://linkedsoftwaredependencies.org/bundles/npm/@jbr-hook/sparql-endpoint-comunica/^3.0.0/components/context.jsonld"
   ],
-  "@id": "urn:jbr:solid-link-traversal",
+  "@id": "urn:jbr:query-short-ltqp",
   "@type": "ExperimentSolidBench",
   "scale": "0.1",
   "configGenerateAux": "input/config-enhancer.json",
@@ -33,7 +33,7 @@
   "queryRunnerUrlParamsRun": { "context": "{ \"lenient\": true }" },
   "queryTimeoutFallback": 240000,
   "hookSparqlEndpoint": {
-    "@id": "urn:jbr:solid-link-traversal:hookSparqlEndpoint",
+    "@id": "urn:jbr:query-short-ltqp:hookSparqlEndpoint",
     "@type": "HookSparqlEndpointComunica",
     "dockerfileClient": "input/dockerfiles/Dockerfile-client",
     "resourceConstraints": {

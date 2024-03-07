@@ -1,4 +1,6 @@
 #!/bin/bash
+pushd experiments
+
 pushd index-vs-storage
 ./run.sh
 popd
@@ -17,4 +19,6 @@ popd
 
 pushd queries-complex
 ./run.sh
+popd
+
 popd

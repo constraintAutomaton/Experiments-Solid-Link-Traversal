@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "experiments",
+    "workspaces": ["rdf-dataset-fragmenter.js", "experiments/*"]
+  }
+  

@@ -1,6 +1,7 @@
 {
   "private": true,
-  "name": "solid-link-traversal",
+  "name": "query-short-ltqp",
+  "version": "0.0.0",
   "dependencies": {
     "@jbr-experiment/solidbench": "^3.0.2",
     "@jbr-hook/sparql-endpoint-comunica": "^3.0.2",

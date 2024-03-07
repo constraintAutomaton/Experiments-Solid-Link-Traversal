@@ -2,6 +2,8 @@
 /node_modules
 /generated/*
 !/generated/.keep
+!/generated/out-validate-params
+!/generated/out-validate
 /output/*
 !/output/.keep
 /combinations/*/generated
