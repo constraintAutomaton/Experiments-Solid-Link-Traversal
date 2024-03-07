@@ -1,6 +1,12 @@
 {
-    "private": true,
-    "name": "experiments",
-    "workspaces": ["rdf-dataset-fragmenter.js", "experiments/*"]
-  }
-  
+  "private": true,
+  "name": "experiments",
+  "workspaces": [
+    "rdf-dataset-fragmenter.js",
+    "experiments/*",
+    "comunica-feature-link-traversal/engines/config-query-sparql-link-traversal",
+    "comunica-feature-link-traversal/packages/mediator-combine-array",
+    "comunica-feature-link-traversal/packages/actor-extract-links-shape-index",
+    "query-shape-alignment"
+  ]
+}
