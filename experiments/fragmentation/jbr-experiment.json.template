@@ -9,7 +9,7 @@
   "scale": "0.1",
   "configGenerateAux": "input/config-enhancer/%FACTOR-size%.json",
   "configFragment": "input/config-fragmenter/%FACTOR-fragmenting%.json",
-  "configFragmentAux": "input/config-fragmenter-auxiliary/%FACTOR-fragmenting%.json",
+  "configFragmentAux": "input/config-fragmenter-auxiliary.json",
   "configQueries": "input/config-queries.json",
   "configServer": "input/config-server.json",
   "validationParamsUrl": "https://cloud.ilabt.imec.be/index.php/s/bBZZKb7cP95WgcD/download/validation_params.zip",
@@ -40,7 +40,7 @@
       "@type": "StaticDockerResourceConstraints",
       "cpu_percentage": 100
     },
-    "configClient": "input/config-client.json",
+    "configClient": "input/config-client/config-%FACTOR-reachability%.json",
     "contextClient": "input/context-client.json",
     "clientPort": 3001,
     "clientLogLevel": "info",

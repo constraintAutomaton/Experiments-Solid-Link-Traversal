@@ -8,7 +8,15 @@
 	"sources": [
 	  {
 	    "@type": "QuadSourceFile",
-	    "filePath": "out-enhanced/social_network_auxiliary.ttl"
+	    "filePath": "out-snb/social_network/social_network_static_0_0.ttl"
+	  },
+	  {
+	    "@type": "QuadSourceFile",
+	    "filePath": "out-snb/social_network/social_network_person_0_0.ttl"
+	  },
+	  {
+	    "@type": "QuadSourceFile",
+	    "filePath": "out-snb/social_network/social_network_activity_0_0.ttl"
 	  }
 	]
   },
@@ -34,11 +42,33 @@
       "replacementString": "http://solidbench-server:3000/pods/$1/profile/card#me"
     },
     {
-      "@type": "QuadTransformerRemapResourceIdentifier",
-      "newIdentifierSeparator": "../noise/",
-      "typeRegex": "vocabulary/Noise$",
-      "identifierPredicateRegex": "vocabulary/noise$",
-      "targetPredicateRegex": "vocabulary/hasCreator$"
+      "@type": "QuadTransformerAppendResourceLink",
+      "typeRegex": "vocabulary/Person$",
+      "predicate": "http://www.w3.org/ns/pim/space#storage",
+      "link": "../"
+    },
+    {
+      "@type": "QuadTransformerAppendQuad",
+      "matcher": {
+        "@type": "QuadMatcherPredicate",
+        "predicateRegex": "vocabulary/containerOf$"
+      },
+      "subject": {
+        "@type": "TermTemplateQuadComponent",
+        "component": "object"
+      },
+      "predicate": {
+        "@type": "TermTemplateStaticNamedNode",
+        "value": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+      },
+      "object": {
+        "@type": "TermTemplateQuadComponent",
+        "component": "subject"
+      },
+      "graph": {
+        "@type": "TermTemplateQuadComponent",
+        "component": "graph"
+      }
     },
     {
       "@type": "QuadTransformerCompositeVaryingResource",
@@ -410,18 +440,91 @@
   "fragmentationStrategy": {
     "@type": "FragmentationStrategyComposite",
     "strategies": [
-      { "@type": "FragmentationStrategySubject" }
+      { "@type": "FragmentationStrategySubject" },
+      {
+        "@type": "FragmentationStrategyProbabilityQuadHandling",
+        "generationProbability": 25,
+        "partitionByResourceType": true,
+        "strategy": {
+          "@type": "FragmentationStrategyShape",
+          "tripleShapeTreeLocator": true,
+          "shapeConfig": {
+            "comments": {
+              "shape": "../shapes/comments.shexc",
+              "directory": "comments"
+            },
+            "post": {
+              "shape": "../shapes/posts.shexc",
+              "directory": "posts"
+            },
+            "card": {
+              "shape": "../shapes/profile.shexc",
+              "directory": "profile"
+            }
+          }
+        }
+      }
     ]
   },
   "quadSink": {
 	"@id": "urn:rdf-dataset-fragmenter:sink:default",
-	"@type": "QuadSinkFile",
-	"log": true,
-	"outputFormat": "application/n-quads",
-	"fileExtension": ".nq",
-    "iriToPath": {
-      "http://": "out-fragments/http/",
-      "https://": "out-fragments/https/"
-    }
+    "@type": "QuadSinkComposite",
+    "sinks": [
+      {
+        "@type": "QuadSinkFile",
+        "log": true,
+        "outputFormat": "application/n-quads",
+        "fileExtension": ".nq",
+        "iriToPath": {
+          "http://": "out-fragments/http/",
+          "https://": "out-fragments/https/"
+        }
+      },
+      {
+        "@type": "QuadSinkFiltered",
+        "filter": {
+          "@type": "QuadMatcherResourceType",
+          "typeRegex": "vocabulary/Person$",
+          "matchFullResource": false
+        },
+        "sink": {
+          "@type": "QuadSinkCsv",
+          "file": "out-fragments/parameters-persons.csv",
+          "columns": [
+            "subject"
+          ]
+        }
+      },
+      {
+        "@type": "QuadSinkFiltered",
+        "filter": {
+          "@type": "QuadMatcherResourceType",
+          "typeRegex": "vocabulary/Comment$",
+          "matchFullResource": false
+        },
+        "sink": {
+          "@type": "QuadSinkCsv",
+          "file": "out-fragments/parameters-comments.csv",
+          "columns": [
+            "subject"
+          ]
+        }
+      },
+      {
+        "@type": "QuadSinkFiltered",
+        "filter": {
+          "@type": "QuadMatcherResourceType",
+          "typeRegex": "vocabulary/Post$",
+          "matchFullResource": false
+        },
+        "sink": {
+          "@type": "QuadSinkCsv",
+          "file": "out-fragments/parameters-posts.csv",
+          "columns": [
+            "subject"
+          ]
+        }
+      }
+    ]
   }
 }
