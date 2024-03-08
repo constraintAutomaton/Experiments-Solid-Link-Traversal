@@ -1,4 +1,7 @@
 #!/bin/bash
+rm -rf node_modules
+rm -f yarn.lock
+
 pushd experiments
 
 pushd index-vs-storage
