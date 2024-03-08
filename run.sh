@@ -1,10 +1,6 @@
 #!/bin/bash
 pushd experiments
 
-pushd index-vs-storage
-./run.sh
-popd
-
 pushd fragmentation
 ./run.sh
 popd
