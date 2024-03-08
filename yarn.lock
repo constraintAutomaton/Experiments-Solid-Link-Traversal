@@ -1990,15 +1990,6 @@
     "@comunica/bus-rdf-resolve-hypermedia-links" "^2.0.1"
     "@comunica/core" "^2.0.1"
 
-"@comunica/bus-extract-links@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-extract-links/-/bus-extract-links-0.2.0.tgz#6f8367e71abc36046d46adc41df45315f5a7de8b"
-  integrity sha512-tnQja3Rro0xlCgMTIXOEN0P9u8wmIpGXO8QgwI+6UEH1IQl9/8weF97tlZI94urCZ5ql/zKpwShdoCoc5j//mw==
-  dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.7.0"
-    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.7.0"
-    "@comunica/core" "^2.7.0"
-
 "@comunica/bus-hash-bindings@^2.10.0":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@comunica/bus-hash-bindings/-/bus-hash-bindings-2.10.0.tgz#8b78d17b9f86e61025eff6c1c1e9bc4e3fda90e6"
@@ -2117,7 +2108,7 @@
     "@comunica/core" "^2.10.0"
     "@comunica/types" "^2.10.0"
 
-"@comunica/bus-rdf-metadata-extract@^2.0.1", "@comunica/bus-rdf-metadata-extract@^2.10.0", "@comunica/bus-rdf-metadata-extract@^2.7.0":
+"@comunica/bus-rdf-metadata-extract@^2.0.1", "@comunica/bus-rdf-metadata-extract@^2.10.0":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-metadata-extract/-/bus-rdf-metadata-extract-2.10.0.tgz#440b93a3fe42bfdd50285cd8955cd223ae4c8553"
   integrity sha512-KcMZh+7kHjdCIMkLFki99tQH1arVp/evVnk0BGXfWd+ca3eCLrr42tb1tGfN2JkaCSxgtzWO4DRZcSzJ4sI2dQ==
@@ -2159,7 +2150,7 @@
     "@comunica/bus-rdf-resolve-hypermedia-links" "^2.10.0"
     "@comunica/core" "^2.10.0"
 
-"@comunica/bus-rdf-resolve-hypermedia-links@^2.0.1", "@comunica/bus-rdf-resolve-hypermedia-links@^2.10.0", "@comunica/bus-rdf-resolve-hypermedia-links@^2.6.0", "@comunica/bus-rdf-resolve-hypermedia-links@^2.7.0":
+"@comunica/bus-rdf-resolve-hypermedia-links@^2.0.1", "@comunica/bus-rdf-resolve-hypermedia-links@^2.10.0", "@comunica/bus-rdf-resolve-hypermedia-links@^2.6.0":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-hypermedia-links/-/bus-rdf-resolve-hypermedia-links-2.10.0.tgz#29516fc67b1f358b0c4cc23007323cacb6b5a7ff"
   integrity sha512-Mcz6bUdZySLK2om0cMt86n5TOThZOTpEFq2M42n7YAE3LL2KMnMDdhkaOC6SyY4tS0HGAuhce21Uq+Gz8Veq2g==
@@ -2248,14 +2239,6 @@
     "@comunica/core" "^2.2.0"
     "@comunica/types-link-traversal" "0.0.2-alpha.8.0"
 
-"@comunica/context-entries-link-traversal@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@comunica/context-entries-link-traversal/-/context-entries-link-traversal-0.2.0.tgz#aa9d0ace5a11db0563be5c8b7b581018504aaf93"
-  integrity sha512-7XvsOJF8d4whFy8HdNLhs3yLfeD5uDHLeuWP1mH5g36xB8gGAvH9sUZlm8fub/BVegSkQwJ5Sf/Q1PortlQEKw==
-  dependencies:
-    "@comunica/core" "^2.7.0"
-    "@comunica/types-link-traversal" "^0.2.0"
-
 "@comunica/context-entries@^2.0.1", "@comunica/context-entries@^2.10.0", "@comunica/context-entries@^2.2.0", "@comunica/context-entries@^2.4.0", "@comunica/context-entries@^2.5.1", "@comunica/context-entries@^2.6.0", "@comunica/context-entries@^2.8.1":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@comunica/context-entries/-/context-entries-2.10.0.tgz#6920bad7b55ffcf99ed00472fadab659147bd3ea"
@@ -2267,7 +2250,7 @@
     jsonld-context-parser "^2.2.2"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/core@^2.0.1", "@comunica/core@^2.10.0", "@comunica/core@^2.2.0", "@comunica/core@^2.4.0", "@comunica/core@^2.5.1", "@comunica/core@^2.6.0", "@comunica/core@^2.7.0":
+"@comunica/core@^2.0.1", "@comunica/core@^2.10.0", "@comunica/core@^2.2.0", "@comunica/core@^2.4.0", "@comunica/core@^2.5.1", "@comunica/core@^2.6.0":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@comunica/core/-/core-2.10.0.tgz#198c176443d03d6b374ee2b11fdd862b4b7c2b63"
   integrity sha512-onsGs2iKHUPRxxMOdx42vdxslk8q9FQZdRjQtHJ6SGiCpJwIL9ciBgPIOl2RL2YfzXHemr/0umeNOppRDcWhJA==
@@ -2592,7 +2575,7 @@
     "@rubensworks/solid-client-authn-isomorphic" "^2.0.0"
     solid-node-interactive-auth "^1.0.2"
 
-"@comunica/query-sparql@^2.2.1", "@comunica/query-sparql@^2.6.3", "@comunica/query-sparql@^2.6.4":
+"@comunica/query-sparql@^2.10.2", "@comunica/query-sparql@^2.2.1", "@comunica/query-sparql@^2.6.3", "@comunica/query-sparql@^2.6.4":
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-2.10.2.tgz#9a7e5683c90d6bedb529981bc6d2bb126c4f0ab0"
   integrity sha512-bgjQ8N5/vP3Iy71AgDKQc06mXmEBvh7dsenw2VPbvk11iXywec4XCq8TzX+GozL+Zxxl5XyYlBw+nRjvORTGHg==
@@ -2754,11 +2737,6 @@
   version "0.0.2-alpha.8.0"
   resolved "https://registry.yarnpkg.com/@comunica/types-link-traversal/-/types-link-traversal-0.0.2-alpha.8.0.tgz#930d82b4e969691dfe91e88c60298f849a229e18"
   integrity sha512-YkoshAqxnO8PXhnYbjx0sfDhlxUaRrYf6bJL0QbWQPP0tlrLIU0KMWGuRJCZpI+j1/6qM33ekuKBLe6qOc1i7A==
-
-"@comunica/types-link-traversal@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@comunica/types-link-traversal/-/types-link-traversal-0.2.0.tgz#719515aa97f83f2853a359a0e2dfb3f47f0a861e"
-  integrity sha512-HftAEJuI2cwciB60S1mugyKctRUspKItIQdMukTbIxh6+JsBHF+j522CKnGS7zMM3YHNhkO265xFlSKwYk6wuA==
 
 "@comunica/types@^2.0.1", "@comunica/types@^2.10.0":
   version "2.10.0"
@@ -3320,6 +3298,14 @@
     "@shexjs/util" "^1.0.0-alpha.25"
     "@ts-jison/parser" "^0.4.1-alpha.1"
 
+"@shexjs/parser@1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shexjs/parser/-/parser-1.0.0-alpha.27.tgz#73799bd20b8aba04b017656c4090de7185783fdd"
+  integrity sha512-ahnc38+fQkaA3Vjbok88UvVCeowlvU5vFPYuCZ07OJVTm3Qhw5U4WmG4s3F2HhTRH90m/IYezaLc+X6y74DKOg==
+  dependencies:
+    "@shexjs/util" "^1.0.0-alpha.27"
+    "@ts-jison/parser" "^0.4.1-alpha.1"
+
 "@shexjs/term@^1.0.0-alpha.27":
   version "1.0.0-alpha.27"
   resolved "https://registry.yarnpkg.com/@shexjs/term/-/term-1.0.0-alpha.27.tgz#7a2a26f4a871ddb5e9a83491abb66b98f065c48a"
@@ -3329,7 +3315,7 @@
     rdf-data-factory "^1.1.2"
     relativize-url "^0.1.0"
 
-"@shexjs/util@^1.0.0-alpha.21", "@shexjs/util@^1.0.0-alpha.25":
+"@shexjs/util@^1.0.0-alpha.21", "@shexjs/util@^1.0.0-alpha.25", "@shexjs/util@^1.0.0-alpha.27":
   version "1.0.0-alpha.28"
   resolved "https://registry.yarnpkg.com/@shexjs/util/-/util-1.0.0-alpha.28.tgz#3a654d589ff9ffcec2ea772dcd94323471821161"
   integrity sha512-L8pBokTU/5eNRJPkC8R9SIgPw6/JDh/bHKdV5TZzf8/FkOMNJwKIy6UDHXM1I8FJ+c8u2gOOHp2MA+7b+md+0A==
@@ -3908,7 +3894,7 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.2.tgz#5950e50960793055845e956c427fc2b0d70c5239"
   integrity sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==
 
-"@types/parse-link-header@^2.0.0":
+"@types/parse-link-header@^2.0.0", "@types/parse-link-header@^2.0.1":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/parse-link-header/-/parse-link-header-2.0.3.tgz#37ad650d12aecb055b64c2d43ddb1534e356ad33"
   integrity sha512-ffLAxD6Xqcf2gSbtEJehj8yJ5R/2OZqD4liodQvQQ+hhO4kg1mk9ToEZQPMtNTm/zIQj2GNleQbsjPp9+UQm4Q==
@@ -3946,6 +3932,14 @@
   version "2.3.15"
   resolved "https://registry.yarnpkg.com/@types/readable-stream/-/readable-stream-2.3.15.tgz#3d79c9ceb1b6a57d5f6e6976f489b9b5384321ae"
   integrity sha512-oM5JSKQCcICF1wvGgmecmHldZ48OZamtMxcGGVICOJA8o8cahXC1zEVAif8iwoc5j8etxFaRFnf095+CDsuoFQ==
+  dependencies:
+    "@types/node" "*"
+    safe-buffer "~5.1.1"
+
+"@types/readable-stream@^4.0.0":
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/@types/readable-stream/-/readable-stream-4.0.10.tgz#009bb80d5211619cdccbe0a4c075ae18ef52eab1"
+  integrity sha512-AbUKBjcC8SHmImNi4yK2bbjogQlkFSg7shZCcicxPQapniOlajG8GCc39lvXzCWX4lLRRs7DM3VAeSlqmEVZUA==
   dependencies:
     "@types/node" "*"
     safe-buffer "~5.1.1"
@@ -8309,6 +8303,11 @@ qs@^6.4.0:
   integrity sha512-trVZiI6RMOkO476zLGaBIzszOdFPnCCXHPG9kn0yuS1uz6xdVxPfZdB3vUig9pxPFDM9BRAgz/YUIVQ1/vuiUg==
   dependencies:
     side-channel "^1.0.6"
+
+querystring@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.1.tgz#40d77615bb09d16902a85c3e38aa8b5ed761c2dd"
+  integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
 
 queue-microtask@^1.1.2, queue-microtask@^1.2.2:
   version "1.2.3"

@@ -4,9 +4,8 @@
   "workspaces": [
     "rdf-dataset-fragmenter.js",
     "experiments/*",
-    "comunica-feature-link-traversal/engines/config-query-sparql-link-traversal",
-    "comunica-feature-link-traversal/packages/mediator-combine-array",
-    "comunica-feature-link-traversal/packages/actor-extract-links-shape-index",
+    "comunica-feature-link-traversal/engines/*",
+    "comunica-feature-link-traversal/packages/*",
     "query-shape-alignment"
   ]
 }
