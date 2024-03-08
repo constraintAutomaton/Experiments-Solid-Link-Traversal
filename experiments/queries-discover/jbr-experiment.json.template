@@ -40,7 +40,7 @@
       "@type": "StaticDockerResourceConstraints",
       "cpu_percentage": 100
     },
-    "configClient": "input/config-client/%FACTOR-reachability%-%FACTOR-structure%.json",
+    "configClient": "input/config-client/config-%FACTOR-reachability%.json",
     "contextClient": "input/context-client.json",
     "clientPort": 3001,
     "clientLogLevel": "info",

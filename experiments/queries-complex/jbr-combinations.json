@@ -6,7 +6,11 @@
   "@type": "FullFactorialCombinationProvider",
   "commonGenerated": true,
   "factors": {
-    "reachability": [ "cnone", "cmatch", "call" ],
-    "structure": [ "none", "idx", "idx-filt", "ldp", "ldp-idx", "ldp-idx-filt" ]
+    "reachability": [
+      "ldp-shape-index-type-index",
+      "config-solid-ldp-filtered-type-index",
+      "config-solid-ldp-shape-index",
+      "config-solid-shape-index"
+    ]
   }
 }
