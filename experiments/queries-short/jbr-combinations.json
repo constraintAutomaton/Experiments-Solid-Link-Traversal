@@ -8,9 +8,9 @@
   "factors": {
     "reachability": [
       "ldp-shape-index-type-index",
-      "config-solid-ldp-filtered-type-index",
-      "config-solid-ldp-shape-index",
-      "config-solid-shape-index"
+      "ldp-shape-index-type-index",
+      "ldp-shape-index",
+      "shape-index"
     ]
   }
 }

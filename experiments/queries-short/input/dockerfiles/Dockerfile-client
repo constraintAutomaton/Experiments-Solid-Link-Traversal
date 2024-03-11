@@ -1,4 +1,4 @@
-FROM comunica/query-sparql-link-traversal-solid:dev@sha256:f87d5586b734ad7467ea3d7c62d026005304e2c778c2f6cba3dc93d65121fb5e
+FROM query-sparql-ltqp-shape-index:Dockerfile
 
 ARG CONFIG_CLIENT
 ARG QUERY_TIMEOUT
