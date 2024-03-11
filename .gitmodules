@@ -2,10 +2,3 @@
 	path = rdf-dataset-fragmenter.js
 	url = git@github.com:constraintAutomaton/rdf-dataset-fragmenter.js.git
 	branch = feature/shapeIndex
-[submodule "comunica-feature-link-traversal"]
-	path = comunica-feature-link-traversal
-	url = git@github.com:constraintAutomaton/comunica-feature-link-traversal.git
-	branch = feature/shapeIndex
-[submodule "query-shape-detection"]
-	path = query-shape-detection
-	url = git@github.com:constraintAutomaton/query-shape-detection.git

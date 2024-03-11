@@ -10,8 +10,9 @@
       "size": [ "1", "5", "10" ],
       "reachability": [
         "ldp-shape-index-type-index",
-        "config-solid-ldp-shape-index",
-        "config-solid-shape-index"
+        "ldp-shape-index-type-index",
+        "ldp-shape-index",
+        "shape-index"
       ]
   }
 }
