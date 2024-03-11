@@ -6,6 +6,6 @@
 	path = comunica-feature-link-traversal
 	url = git@github.com:constraintAutomaton/comunica-feature-link-traversal.git
 	branch = feature/shapeIndex
-[submodule "query-shape-alignment"]
-	path = query-shape-alignment
-	url = git@github.com:constraintAutomaton/query-shape-alignment.git
+[submodule "query-shape-detection"]
+	path = query-shape-detection
+	url = git@github.com:constraintAutomaton/query-shape-detection.git
