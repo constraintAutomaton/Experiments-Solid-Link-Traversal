@@ -5,9 +5,6 @@
     ],
     "import": [
       "ccqslt:config/config-solid-base.json",
-      "ccqslt:config/extract-links/actors/predicates-common.json",
-      "ccqslt:config/extract-links/actors/predicates-ldp.json",
-      "ccqslt:config/extract-links/actors/predicates-solidstorage.json",
       "ccqslt:config/extract-links/actors/quad-pattern-query.json",
       "ccqslt:config/extract-links/actors/solid-shape-index.json",
 

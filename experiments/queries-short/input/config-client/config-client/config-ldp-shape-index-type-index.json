@@ -10,6 +10,7 @@
       "ccqslt:config/extract-links/actors/predicates-solidstorage.json",
       "ccqslt:config/extract-links/actors/quad-pattern-query.json",
       "ccqslt:config/extract-links/actors/solid-shape-index.json",
+      "ccqslt:config/extract-links/actors/solid-type-index-noinference.json",
 
       "ccqslt:config/rdf-resolve-hypermedia-links-queue/actors/wrapper-filter-links.json",
 

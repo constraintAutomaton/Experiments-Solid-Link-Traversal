@@ -2,10 +2,9 @@
   "private": true,
   "name": "experiments",
   "workspaces": [
-    "rdf-dataset-fragmenter.js",
-    "experiments/*",
-    "comunica-feature-link-traversal/engines/*",
-    "comunica-feature-link-traversal/packages/*",
-    "query-shape-alignment"
-  ]
+    "experiments/*"
+  ],
+  "dependencies": {
+    "@comunica/query-sparql-link-traversal": "^0.2.0"
+  }
 }
