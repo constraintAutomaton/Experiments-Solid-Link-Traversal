@@ -1,19 +1,41 @@
-FROM query-sparql-ltqp-shape-index:Dockerfile
+# syntax=docker/dockerfile:1
+
+FROM bitnami/git:latest AS git
+
+# the step with git is because jbr does not use BuildKit and adding a git repo does not work
+RUN git clone --branch feature/shapeIndex --single-branch https://github.com/constraintAutomaton/comunica-feature-link-traversal.git /opt/client
+# optional: go to /opt/client and checkout the commit you want to pin for reproducibility
+
+FROM node:20-slim
+
+COPY --from=git /opt/client /opt/client
+
+WORKDIR /opt/client
+
+# this assumes the install step also builds everything
+RUN yarn install --ignore-engines
+
+WORKDIR /opt/client/engines/query-sparql-link-traversal-solid
 
 ARG CONFIG_CLIENT
 ARG QUERY_TIMEOUT
 ARG MAX_MEMORY
 ARG LOG_LEVEL
+ARG COMUNICA_PORT
+ARG COMUNICA_WORKERS
+ARG CONTEXT_CLIENT
 
-ADD $CONFIG_CLIENT /tmp/config.json
+ADD $CONFIG_CLIENT /tmp/engine.json
 
-ENV COMUNICA_CONFIG=/tmp/config.json
-ENV NODE_ENV=production
-ENV MAX_MEMORY=$MAX_MEMORY
-ENV QUERY_TIMEOUT=$QUERY_TIMEOUT
-ENV LOG_LEVEL=$LOG_LEVEL
+ENV COMUNICA_CONFIG /tmp/engine.json
+ENV NODE_ENV production
+ENV NODE_OPTIONS --max-old-space-size=$MAX_MEMORY
+ENV QUERY_TIMEOUT $QUERY_TIMEOUT
+ENV LOG_LEVEL $LOG_LEVEL
+ENV COMUNICA_PORT $COMUNICA_PORT
+ENV COMUNICA_WORKERS $COMUNICA_WORKERS
 
-EXPOSE 3000
+EXPOSE $COMUNICA_PORT
 
-ENTRYPOINT []
-CMD [ "/bin/sh", "-c", "node --max-old-space-size=$MAX_MEMORY ./bin/http.js -c /tmp/context.json -p 3000 -t $QUERY_TIMEOUT -l $LOG_LEVEL --idp void -i -w 1 --contextOverride" ]
+# I forgot why I have ENTRYPOINT and not CMD here, but I assume it works
+ENTRYPOINT [ "/bin/bash", "-c", "node ./bin/http.js --lenient --contextOverride --invalidateCache --workers 1 --context /tmp/context.json --port $COMUNICA_PORT --idp void --timeout $QUERY_TIMEOUT --logLevel $LOG_LEVEL" ]
