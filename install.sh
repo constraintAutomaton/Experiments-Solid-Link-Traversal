@@ -1,5 +1,7 @@
 #!/bin/bash
 yarn install --ignore-engines
-pushd engine
-    ./build_docker.sh
+pushd rdf-dataset-fragmenter.js
+    # might return an error but it is still compiling
+    yarn build:components
+    yarn build:ts
 popd
