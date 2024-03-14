@@ -450,16 +450,19 @@
           "tripleShapeTreeLocator": true,
           "shapeConfig": {
             "comments": {
-              "shape": "../shapes/comments.shexc",
-              "directory": "comments"
+              "shape": "../../../shapes/comments.shexc",
+              "directory": "comments",
+              "name": "Comment"
             },
             "post": {
-              "shape": "../shapes/posts.shexc",
-              "directory": "posts"
+              "shape": "../../../shapes/posts.shexc",
+              "directory": "posts",
+              "name": "Post"
             },
             "card": {
-              "shape": "../shapes/profile.shexc",
-              "directory": "profile"
+              "shape": "../../../shapes/profile.shexc",
+              "directory": "profile",
+              "name": "Profile"
             }
           }
         }

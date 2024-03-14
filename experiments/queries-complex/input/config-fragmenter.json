@@ -451,15 +451,18 @@
           "shapeConfig": {
             "comments": {
               "shape": "../shapes/comments.shexc",
-              "directory": "comments"
+              "directory": "comments",
+              "name": "Comment"
             },
             "post": {
               "shape": "../shapes/posts.shexc",
-              "directory": "posts"
+              "directory": "posts",
+              "name": "Post"
             },
             "card": {
               "shape": "../shapes/profile.shexc",
-              "directory": "profile"
+              "directory": "profile",
+              "name": "Profile"
             }
           }
         }

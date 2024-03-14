@@ -27,6 +27,8 @@ pushd experiments
         cp -rf ../../out-validate-params generated/
         cp -rf ../../out-validate generated/
         yarn jbr generate-combinations
+        find ./combinations/combination_*[0-9]/generated -maxdepth 0 -type d -exec cp -rf ../../out-validate-params {} ";"
+        find ./combinations/combination_*[0-9]/generated -maxdepth 0 -type d -exec cp -rf ../../out-validate {} ";"
     popd
 
 popd
