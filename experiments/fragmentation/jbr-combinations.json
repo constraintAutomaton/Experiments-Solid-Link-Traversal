@@ -9,7 +9,7 @@
       "fragmenting": [ "100-percent", "75-percent", "50-percent", "25-percent", "0-percent" ],
       "size": [ "1", "5", "10" ],
       "reachability": [
-        "ldp-shape-index-type-index",
+        "ldp-filtered-type-index",
         "ldp-shape-index-type-index",
         "ldp-shape-index",
         "shape-index"

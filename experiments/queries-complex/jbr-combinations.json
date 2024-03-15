@@ -7,7 +7,7 @@
   "commonGenerated": true,
   "factors": {
     "reachability": [
-      "ldp-shape-index-type-index",
+      "ldp-filtered-type-index",
       "ldp-shape-index-type-index",
       "ldp-shape-index",
       "shape-index"

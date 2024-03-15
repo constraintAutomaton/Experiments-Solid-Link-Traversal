@@ -1,1 +1,1 @@
-30 * * * * ${pathToBackUP}
+30 * * * * ${realpath ./backup.sh}
