@@ -1,4 +1,4 @@
 [submodule "rdf-dataset-fragmenter.js"]
 	path = rdf-dataset-fragmenter.js
-	url = git@github.com:constraintAutomaton/rdf-dataset-fragmenter.js.git
+	url = https://github.com/constraintAutomaton/rdf-dataset-fragmenter.js.git
 	branch = feature/shapeIndex
