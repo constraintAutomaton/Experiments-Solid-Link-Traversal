@@ -2,25 +2,25 @@
 pushd experiments
 
     pushd queries-short
-        ./run.sh
+        ./run.sh || true
     popd
-    ../backup_procedure/backup.sh
+    ../backup_procedure/backup.sh || true
 
     pushd queries-discover
-        ./run.sh
+        ./run.sh || true
     popd
-    ../backup_procedure/backup.sh
+    ../backup_procedure/backup.sh || true
 
     pushd queries-complex
-        ./run.sh
+        ./run.sh || true
     popd
-    ../backup_procedure/backup.sh
+    ../backup_procedure/backup.sh || true
 
     pushd fragmentation
-        ./run.sh
+        ./run.sh || true
     popd
-    ../backup_procedure/backup.sh
+    ../backup_procedure/backup.sh || true
     
 popd
 
-./backup_procedure/backup.sh
+./backup_procedure/backup.sh || true
