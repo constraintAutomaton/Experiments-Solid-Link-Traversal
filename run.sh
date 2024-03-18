@@ -1,4 +1,7 @@
 #!/bin/bash
+
+cd ./backup_procedure && ./backup.sh
+
 pushd experiments
 
     pushd queries-short
