@@ -2,29 +2,6 @@
 rm -rf node_modules
 
 pushd experiments
-
-    pushd queries-short
-        rm -rf node_modules
-        rm -r combinations/*
-        rm -r output/*
-    popd
-
-    pushd queries-discover
-        rm -rf node_modules
-        rm -r combinations/*
-        rm -r output/*
-    popd
-
-    pushd queries-complex
-        rm -rf node_modules
-        rm -r combinations/*
-        rm -r output/*
-    popd
-
-    pushd fragmentation
-        rm -rf node_modules
-        rm -r combinations/*
-        rm -r output/*
-    popd
-
-popd
+    find ./*/node_modules -maxdepth 0 -type d -exec rm -rv {} \;
+    find ./*/combinations/* -type d -exec rm -rv {} \;
+    find ./*/output/* -maxdepth 0 -type d -exec rm -rv {} \;

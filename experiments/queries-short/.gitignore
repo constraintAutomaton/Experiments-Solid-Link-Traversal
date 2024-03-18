@@ -1,6 +1,6 @@
 /componentsjs-error-state.json
 /node_modules
-/generated/*
+/generated
 !/generated/.keep
 !/generated/out-validate-params
 !/generated/out-validate
