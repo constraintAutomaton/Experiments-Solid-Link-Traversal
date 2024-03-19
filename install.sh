@@ -6,3 +6,5 @@ pushd rdf-dataset-fragmenter.js
     yarn build
     yarn build:components
 popd
+
+touch errors
