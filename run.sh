@@ -22,11 +22,6 @@ pushd experiments
     cd ./../backup_procedure && ./backup.sh || true
     cd ./../experiments
 
-    pushd fragmentation
-        ./run.sh || true
-    popd
-    cd ./../backup_procedure && ./backup.sh || true
-    cd ./../experiments
     
 popd
 
