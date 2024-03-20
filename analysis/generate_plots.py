@@ -49,6 +49,7 @@ def plotComparif(data, col, queries, path):
     ax.legend()
     
     plt.savefig(path, format="svg")
+    plt.close()
 dataFrame = {}
 nVariation = 7
 querySet = []
