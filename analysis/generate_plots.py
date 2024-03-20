@@ -6,13 +6,6 @@ import os
 
 plotFolder = Path('./plots')
 
-paths = {
-    'ldp-filtered-type-index': "/home/id357/Downloads/experiments/queries-short/output/combination_0/query-times.csv",
-    'ldp-shape-index-type-index':"/home/id357/Downloads/experiments/queries-short/output/combination_1/query-times.csv",
-    "ldp-shape-index":"/home/id357/Downloads/experiments/queries-short/output/combination_2/query-times.csv",
-    "shape-index":"/home/id357/Downloads/experiments/queries-short/output/combination_3/query-times.csv"
-}
-
 def generate(path, query):
     df = pd.read_csv(path,sep=";")
     df.loc[df['error'] == True, ['time','results', 'httpRequests']] = float('nan')
@@ -34,7 +27,7 @@ def plotComparif(data, col, queries, path):
     fig, ax = plt.subplots(layout='constrained')
     i = 0
     
-    for key, datasets in data.items():
+    for key, datasets in data.items():        
         offset = bar_width * i
         df = datasets[queries]
         y = df[col].to_numpy()
@@ -50,22 +43,45 @@ def plotComparif(data, col, queries, path):
     
     plt.savefig(path, format="svg")
     plt.close()
-dataFrame = {}
-nVariation = 7
-querySet = []
 
-for key,path in paths.items():
-    dataFrame[key] = {}
-    for i in range(nVariation+1): 
-        queries = "interactive-short-{}".format(i+1)
-        querySet.append(queries)
-        dataFrame[key][queries] = generate(path, queries)
 
-fields = ['time', 'results', 'httpRequests']
+def generateQueryPlots(paths, queryNameTemplate, folder, nQueryVariance):
+    dataFrame = {}
+    querySet = []
+    for key,path in paths.items():
+        dataFrame[key] = {}
+        for i in range(nQueryVariance): 
+            queries = queryNameTemplate.format(i+1)
+            querySet.append(queries)
+            dataFrame[key][queries] = generate(path, queries)
 
-for queries in querySet:
-    for field in fields:
-        filename = "{}-{}.svg".format(queries, field)
-        path = os.path.join(plotFolder, filename)
-        plotComparif(dataFrame, field,queries,  path)
+    fields = ['time', 'results', 'httpRequests']
 
+    for queries in querySet:
+        for field in fields:
+            filename = "{}-{}.svg".format(queries, field)
+            path = os.path.join(plotFolder,folder, filename)
+            plotComparif(dataFrame, field,queries,  path)
+
+pathsQueryShort = {
+    'ldp-filtered-type-index': "/home/id357/Downloads/experiments/queries-short/output/combination_0/query-times.csv",
+    'ldp-shape-index-type-index':"/home/id357/Downloads/experiments/queries-short/output/combination_1/query-times.csv",
+    "ldp-shape-index":"/home/id357/Downloads/experiments/queries-short/output/combination_2/query-times.csv",
+    "shape-index":"/home/id357/Downloads/experiments/queries-short/output/combination_3/query-times.csv"
+}
+queryNameTemplateQueryShort = "interactive-short-{}"
+folderQueryShort = "query-short"
+nQueryVarianceQueryShort = 7
+
+pathsQueryDiscovery = {
+    'ldp-filtered-type-index': "./result_queries_discover/combination_0/query-times.csv",
+    'ldp-shape-index-type-index':"./result_queries_discover/combination_1/query-times.csv",
+    "ldp-shape-index":"./result_queries_discover/combination_2/query-times.csv",
+    "shape-index":"./result_queries_discover/combination_3/query-times.csv"
+}
+queryNameTemplateQueryDiscovery = "interactive-discover-{}"
+folderQueryDiscovery = "query-discovery"
+nQueryVarianceQueryDiscovery = 8
+
+generateQueryPlots(pathsQueryDiscovery, queryNameTemplateQueryDiscovery, folderQueryDiscovery, nQueryVarianceQueryDiscovery)
+generateQueryPlots(pathsQueryShort, queryNameTemplateQueryShort, folderQueryShort, nQueryVarianceQueryShort)
