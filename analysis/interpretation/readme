@@ -1,1 +1,30 @@
 https://beeref.org/
+
+# Method of analysis
+
+## Static analysis
+We can analysise statically which documents our engine will need for that purpose we divide the query by triple subject.
+Those subject can be define as an instance of an triple class.
+The class can be defined statically or dynamically.
+A static class is one where the predicate can be known before the execution of the query,
+whereas a dynamic one is when one or more predicate a variables.
+
+Given static classes and a shape index we can determine if the query can be fully or partially answer
+by data inside a pod. If we map known domain of external ressources or pods than we can given 
+that a class has properties outside the range of the shape index if we need to traverse pods to resolve the partial (or full results of the query paterns)
+
+
+## Analysis of the acquistion mecanism
+
+We can know the ratio of the contributions of the linked pushed inside the queue by anotating the provenance of the
+link before they are pushed in the link queue. 
+
+Second step:
+We can also check if those link yield partial or full results.
+
+## Analysis of the effectivenness of the filters
+We can record each time a filter let a link go inside the queue and each time it stop a link from going out of the queue
+
+## Comparation with a world data source
+We can take our benchmark into one data source and query it with every query to know the "absolute" completeness
+or a completeness based on results and not on traversal. We can analysise it with a state of the art query engine and compare also the execution time (kinda just for fun)
