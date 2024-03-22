@@ -15,9 +15,7 @@ SELECT ?firstName ?lastName ?birthday ?locationIP ?browserUsed ?cityId ?gender ?
     snvoc:isLocatedIn ?city.
   ?city snvoc:id ?cityId.
   <http://solidbench-server:3000/pods/00000000000000000933/profile/card#me> snvoc:browserUsed ?browserUsed.
-}
-
-`;
+}`.replaceAll('solidbench-server', 'localhost');;
 const configPath = '/home/id357/Documents/PhD/coding/Experiments-Solid-Link-Traversal/config-client/ldp-filtered-type-index.json';
 const engine = await new QueryEngineFactory().create({ configPath });
 

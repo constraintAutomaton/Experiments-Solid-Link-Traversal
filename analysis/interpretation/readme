@@ -28,3 +28,8 @@ We can record each time a filter let a link go inside the queue and each time it
 ## Comparation with a world data source
 We can take our benchmark into one data source and query it with every query to know the "absolute" completeness
 or a completeness based on results and not on traversal. We can analysise it with a state of the art query engine and compare also the execution time (kinda just for fun)
+
+## Realisation
+
+The number of HTTP request is not linear with the diminushing of the execution time I think either the filters or the
+alignment is really slow I can partition the filters the gain some speed.
