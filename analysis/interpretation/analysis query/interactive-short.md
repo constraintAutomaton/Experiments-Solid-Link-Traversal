@@ -42,11 +42,13 @@ WHERE
 }
 ```
 ## Object
-- `?person` we know it is a `Profile` because the class `snvoc:Person` and because of `snvoc:gender` at least.
-- `?city`
+- `?person` we know it is a is strongly aligned with `Profile` because the class `snvoc:Person`.
+We know it is weakly align too because all the properties are inside of `Profile`.
+- `?city` we cannot know it's class.
 ## Analysis
 We can know that `?person` is in the pod by the shape Index with the determinant factor that
 the type is `snvoc:Person`.
+We also know by a strong alignment that the data of `?person` will be in a set of resources.
 
 For the `?city` we cannot know if it is in the pod or somewhere.
 But giving the shape we can know the cardinality.
@@ -62,7 +64,7 @@ If we know that the object is bounded by the index than no hypothesis is need an
 
 
 We could use `cMatch` + `cShapeIndex`, if the `?city` is in the open web and has a finite
-cardinality
+cardinality.
 
 
 # 2nd variation
@@ -108,7 +110,7 @@ WHERE {
 LIMIT 10
 ```
 ## Object
-- `?person` we know it is a `Profile` because the class `snvoc:Person`
+- `?person`: with a strong aligment we can know it is a `Person` because of the class `snvoc:Person`. With a weak aligment it would be inconclusive.
 - `?message` it can be either a a `Post` or a `Comment`, because `snvoc:content` and `snvoc:imageFile` which discriminate `Person`. But we cannot assume the exclusion of all the other information in the pod because we have a weak aligment with the `Comment`.
 - `?originalPostInner` is a `Post` because of the class `snvoc:Post` and `snvoc:replyOf`
 - `?originalPost` can be either a `Post` or a weak `Comment`
@@ -161,6 +163,23 @@ WHERE
     ?person snvoc:id ?personId .
 }
 ```
+## Object
+- `?rootPerson` - There is a **strong aligment** with `Person` because of `snvoc:Person`. There is a **weak aligment** because of `snvoc:knows`
+- `?knows` - We cannot know the class because of `snvoc:hasPerson`
+- `?person` - We can know by a **weak aligment** that is a `Person`
+
+## Analysis
+For the `?knows` we cannot know it's class so we are force to traverse the whole pod for this information.
+The other elements they can be figure out.
+
+## Conclusion
+- `?person` is a **strong** and **weak** `Profile`
+- `?knows`  is unknown
+- `?person` is a **weak** `Person`
+
+We have to traverse the pod but we can exclude `Comment` and `Profile`
+
+
 # 4th variation
 
 ```
@@ -185,6 +204,12 @@ WHERE
     ?message snvoc:content|snvoc:imageFile ?messageContent .
 }
 ```
+## Object
+- `?message` - is a **weak** `Post` or `Comment`
+## Analysis
+we can reject the `Profile` but we sill have to traverse the pod
+## Conclusion
+We have to traverse the pod but we can exclude the `Profile`
 
 # 5th variation
 
@@ -213,6 +238,13 @@ WHERE
     ?creator snvoc:lastName ?lastName .
 }
 ```
+## Object
+- `?message` - We cannot know its class
+- `?creator` - We can know with a **weak aligment** that it is a `Person`
+## Analysis
+We cannot prune anything, we can prioritize thought the `Person` resources
+## Conclusion
+We have to explore the whole pod
 
 # 6th variation
 
@@ -250,7 +282,16 @@ WHERE {
     ?moderator snvoc:lastName ?moderatorLastName .
 }
 ```
+## Object
+- `?message` - It is a **weak** `Comment`
+- `?originalPostInner` - We know it is a **strong** `Post`
+- `?forum` - We cannot know what it is and the `snvoc:id` force the traversal of each resource type
+- `?moderator` - it is a **weak** `Person`
 
+## Analysis
+We have to traverse the pod, but for the `?moderator` we can exclude `Post` and `Comment`
+## Conclusion
+We have to traverse the subject pod, but for the potential pod of `?moderator` we can prune some resource
 # 7th variation
 ```
 # Replies of a message
@@ -293,3 +334,13 @@ WHERE
     BIND( COALESCE(?replyAuthorKnowsOriginalMessageAuthorInner, "false"^^xsd:boolean) AS ?replyAuthorKnowsOriginalMessageAuthor ) .
 }
 ```
+## Object
+- `?message` - A **weak** `Post` or `Comment`
+- `?comment` - A **strong** `Comment`
+- `?replyAuthor` - A **weak** `Profile`
+- `?messageCreator` - a **weak** `Profile`
+## Analysis
+Most properties are weaks so we have to traverse the pod.
+
+## Conclusion
+We have to traverse the pod
