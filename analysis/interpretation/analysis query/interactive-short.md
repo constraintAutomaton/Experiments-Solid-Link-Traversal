@@ -122,7 +122,7 @@ The `?originalPost`, `?creator` and `?message` are not strongly bound to shape, 
 
 ## Conclusion
 
-- `?person` is a `Profile`
+- `?person` is a **strong** `Profile`
 - `?message` is a `Post` or a weak `Comment`
 
 We have to use the whole solid traversal reachability
@@ -174,10 +174,8 @@ The other elements they can be figure out.
 
 ## Conclusion
 - `?person` is a **strong** and **weak** `Profile`
-- `?knows`  is unknown
+- `?knows`  is a **weak** `Comment`, `Post` and `Profile`; unless it is clarify by a constraint
 - `?person` is a **weak** `Person`
-
-We have to traverse the pod but we can exclude `Comment` and `Profile`
 
 
 # 4th variation
