@@ -4,6 +4,12 @@ strong {shape} has a class linked to the shape or has all the property of the sh
 
 Or the shape tell us that the object must be a specific shape and we have a weak shape aligment.
 
+If we are aligned with nothing and we dereference outside of a LDES and all the rest of the prod
+has a strong alignement than we can stop traversing the pod.
+There is also the case where the subject was an object and this object has lead to something outside.
+
+We can also infer the shape from the object of the shape
+
 # 1st variation
 ```
 # Profile of a person

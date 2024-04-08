@@ -319,6 +319,12 @@ GROUP BY ?tagName
 ORDER BY DESC(?postCount) ?tagName
 LIMIT 10
 ```
+## Analysis
+- `?rootPerson`
+- `?post`
+- `?tag`
+- `?post2`
+## Conclusion
 
 # 5th variation
 ```
@@ -378,6 +384,15 @@ GROUP BY ?title ?forumId
 ORDER BY DESC(?postCount) ?forumId
 LIMIT 20
 ```
+## Analysis
+- `?rootPerson`: A **Strong** `Person`
+- `?fr`: `Unknown` unless it is bind by `?rootPerson`, `?post`
+- `?forum`: A **Strong NON existing** `Forum`
+- `?mem`:  `Nothing`
+- `post`: A **Strong** `Post`
+
+## Conclusion
+We have to traverse the whole pod unless `?mem` is outside of the pod, `fr` is bind by `?rootPerson` and/or `?post` and `?forum` is outside the pod.
 
 # 6th variation
 ```
@@ -423,6 +438,14 @@ GROUP BY ?tag2Name
 ORDER BY DESC(?postCount) ?tag2Name
 LIMIT 10
 ```
+## Analysis
+- `?rootPerson`: A **Strong** `Person`
+- `?fr`: `Unknown` unless it is bind by `?rootPerson`
+- `?post`: A **Strong** `Post`
+- `?tag1`: `Nothing` unless it is bind by `?post`
+- `?tag2`: `Nothing` unless it is bind by `?post`
+## Conclusion
+We have to traverse the whole pod unless `fr` is bind by `?rootPerson` and `?tag1` and `?tag2` is outside of the pod or bind by `?post`.
 
 # 7th variation
 ```
@@ -510,6 +533,13 @@ WHERE
 }
 ORDER BY DESC(?likeCreationDate) ?personId
 ```
+## Analysis
+- `?rootPerson`: A **Strong** `Person`
+- `?like`: Unknown unless `?person` bind the type
+- `?message`: A **Strong** `Comment` or `Post`
+- `?person`: A **Strong** `Person`
+## Conclusion
+We have to traverse the pod unless `?person` bind the type of `?like`.
 
 # 8th variation
 ```
@@ -550,6 +580,15 @@ WHERE
 ORDER BY DESC(?commentCreationDate) ?commentId
 LIMIT 20
 ```
+## Analysis
+- `?rootPerson`: A **Strong** `Person`
+- `?message`: A **Strong** `Comment` or `Post`
+- `?comment`: A **Strong** `Comment`
+- `?person`: A **Weak** `Person` with the alignment or a strong something if `?comment` bind it.
+
+## Conclusion
+
+We have to traverse the pod unless `?person` is bind by `?comment`
 
 # 9th variation
 ```
@@ -599,6 +638,13 @@ WHERE {
 ORDER BY DESC(?creationDate) ?post
 LIMIT 20
 ```
+## Analysis
+- `?rootPerson`: A **Strong** `Person`
+- `?fr`: A **Weak** `Person` with the alignment unless `?rootPerson` bind it.
+- `?message`: A **Strong** `Comment` or `Post`
+## Conclusion
+
+We have to traverse the pod unless `?rootPerson` bind `type`
 
 # 10th variation
 ```
@@ -693,6 +739,15 @@ ORDER BY DESC(?commonScore) ?frId
 LIMIT 10
 ```
 
+## Analysis
+- `?rootPerson`: **Strong** `Person`
+- `?post`:  **Strong** `Post`
+- `?frCommonInner`: a **Weak** `Post`, `Comment`, `Person` unless it is given by a constraint by `Post` in `?post`
+- `?frTotalInner`: **Strong** Person
+
+## Conclusion
+We have to traverse the Pod unless `?post` bind a compatible type to `frCommonInner`
+
 # 11th variation
 ```
 # Job referral
@@ -739,13 +794,15 @@ WHERE {
 ORDER BY ?startYear ?frId DESC(?orgName)
 LIMIT 10
 ```
-## Object
-- `?rootPerson`:
-- `?fr`:
-
 ## Analysis
+- `?rootPerson`: **Strong** `Person`
+- `?fr`: **Weak** `Person` using the intersection algoritm
+- `?work`: `Unknown`
+- `?org`: **Weak** `Person` (unless `?work` was outside of the env)
+- `?country`: `Unknown` (unless `?work` was outside of the env implied by `?org`)
 
 ## Conclusion
+We have to traverse the pod
 
 # 12th variation
 ```
